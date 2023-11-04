@@ -1,4 +1,3 @@
-import Products from './components/Products';
 import { useEffect } from 'react';
 import { useFetch } from './hooks/useFetch (1)';
 import { BrowserRouter,Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
@@ -13,6 +12,7 @@ function App() {
       
    return (
     <div className="App">
+  
       <BrowserRouter>
     <Navbar/>
       <Switch>
@@ -28,7 +28,7 @@ function App() {
           <Search/>
 
         </Route>
-        <Route exact path="/recipe">
+      <Route exact path="/recipe/:id">
           <Recipe/>
 
         </Route>

@@ -3,15 +3,16 @@ import { useFetch } from '../hooks/useFetch (1)';
 import ProductList from './ProductList';
 const Products = () => {
   
-    const {data} = useFetch( '  http://localhost:3000/recipes' )
+    const {data,error,isPending} = useFetch( '  http://localhost:3000/recipes' )
 
     
    console.log(data)
     return (
         <div>
-    {data && data.map(item => {
-        return  <ProductList key={item.id} {...item}/>
-       })}
+       {error && <p>{error}</p>}
+       {isPending && <p>loading...</p>}
+      {data && <ProductList recipes={data}/>} 
+    
         </div>
     );
 }
