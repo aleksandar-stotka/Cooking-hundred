@@ -1,11 +1,15 @@
 import React from 'react';
 import { useFetch } from '../hooks/useFetch (1)';
-const Products = ({title}) => {
+import ProductList from './ProductList';
+const Products = () => {
   
-
+    const {data} = useFetch("https://fakestoreapi.com/products")
+   
     return (
         <div>
-       <p>{title}</p>
+    {data && data.map(item => {
+        return  <ProductList key={item.id} {...item}/>
+       })}
         </div>
     );
 }
