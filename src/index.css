@@ -34,6 +34,6 @@ input, textarea {
   text-align: center;
   margin: 40px auto;
 }
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
